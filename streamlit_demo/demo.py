@@ -8,8 +8,8 @@ import streamlit as st
 
 
 # text
-st.title("Welcome to Girls Coding Club")
-st.header("Great to see you here!")
+st.title("What is Streamlit?")
+st.header("Allows you to quickly build web applications and dashboards in Python")
 st.subheader("Hope you are excited about this demo!")
 
 
