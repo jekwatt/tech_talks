@@ -22,6 +22,16 @@ Three advantages of Streamlit
 st.subheader("Hope you are excited about this demo!")
 
 
+# Demo
+
+
+# button
+result = st.button("Click Me 👈")
+st.write(result)
+if result:
+    st.write(":snake:")
+
+
 # dataframe
 df = pd.DataFrame(
     data=np.random.randn(10, 4),
