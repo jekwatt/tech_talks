@@ -11,6 +11,14 @@ import streamlit as st
 # text
 st.title("What is Streamlit?")
 st.header("Allows you to quickly build web applications and dashboards in Python")
+
+"""
+Three advantages of Streamlit
+1. Regular python files as a source
+2. Compatible with many visualizations libraries (Matplotlib, Plotly, Altair)
+3. User interactions are simple to write
+"""
+
 st.subheader("Hope you are excited about this demo!")
 
 
