@@ -1,4 +1,5 @@
 import itertools
+import os
 
 import numpy as np
 import pandas as pd
@@ -66,6 +67,15 @@ options = st.multiselect(
 )
 st.subheader(f"Multiselect:  **{options}**")
 st.write("---")
+
+# iris flower data set
+iris = st.radio(
+    "Select an Iris",
+    options=["setosa", "versicolor", "virginica"])
+st.header(f"Here is a {iris}!")
+image_path = os.path.join("images", f"{iris}.jpeg")
+st.image(image_path)
+
 
 # slider
 st.header("`st.slider`")
