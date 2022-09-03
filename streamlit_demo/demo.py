@@ -10,18 +10,31 @@ import seaborn as sns
 import plotly.express as px
 
 
+media_dir = Path("media")
+
+
 # text
+
 st.title("What is Streamlit?")
+st.image(str(media_dir / "streamlit.png"))
 st.header("Allows you to quickly build web applications and dashboards in Python")
 
-"""
+# streamlit supports markdown
+st.write("""
 Three advantages of Streamlit
 1. Regular python files as a source
-2. Compatible with many visualizations libraries (Matplotlib, Plotly, Altair)
+2. Compatible with many visualizations libraries (Matplotlib, seaborn, Plotly, Altair)
 3. User interactions are simple to write
-"""
 
-st.subheader("Hope you are excited about this demo!")
+[Link to docs](https://docs.streamlit.io/)
+for `streamlit documentation`
+""")
+
+st.subheader("Hope you are excited about the demo!")
+
+# TODO: audio
+
+# TODO: video
 
 
 # Demo
