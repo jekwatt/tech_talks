@@ -115,7 +115,17 @@ scat = px.scatter(
 st.write(scat)
 
 
-# interaction
+# User interactions
+
+# checkbox
+
+st.header("`st.checkbox`")
+agree = st.checkbox("I agree")
+
+if agree:
+    st.subheader("You agreed!")
+st.write("---")
+
 
 # radio
 
@@ -125,7 +135,10 @@ iris = st.radio(
 st.header(f"Here is a {iris}!")
 image_path = os.path.join("media", f"{iris}.jpeg")
 st.image(image_path)
+
+
 # multiselect
+
 st.header("`st.multiselect`")
 options = st.multiselect(
     "What is your favorite pet?",
@@ -136,6 +149,7 @@ st.write("---")
 
 
 # slider
+
 st.header("`st.slider`")
 value = st.slider(
     "Choose a value",
@@ -146,3 +160,34 @@ value = st.slider(
 )
 st.subheader(f"Slide selected: {value}")
 st.write("---")
+
+
+# date_input
+
+st.header("`st.date_input`")
+d = st.date_input("When is Labor Day 2022?")
+st.write("Labor Day 2022 is:", d)
+st.write("---")
+
+
+# text_area
+
+st.header("`st.text_area`")
+handle = st.text_area(
+    "What is your GitHub handle?", "jekwatt")
+st.write(f"Your GitHub handle is: {handle}")
+
+
+# file_uploader
+
+st.header("Uploading data")
+uploaded_file  = st.file_uploader("Upload data here!")
+
+if uploaded_file is None:
+    st.write("Did not upload a file yet")
+    st.stop()
+
+st.write(f"Thank you for uploading `{uploaded_file.name}`!")
+
+data = pd.read_csv(uploaded_file)
+st.write(data)
