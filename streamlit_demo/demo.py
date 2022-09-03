@@ -62,18 +62,14 @@ st.write(df)
 # plot
 st.title("Plot")
 
-# basic plot
 fig, ax = plt.subplots()
 ax.plot([1, 2, 3, 4])
+ax.set_title("Plot")
 ax.set_xlabel("x-label")
 ax.set_ylabel("y-label")
-ax.set_title("Basic Plot")
-
 st.write(fig)
 
 
-# better plot
-fontsizes = itertools.cycle([16, 16, 24, 32])
 # data
 st.title("Iris Data")
 
@@ -81,18 +77,42 @@ iris_path = data_dir / "iris.csv"
 iris = pd.read_csv(iris_path)
 st.write(iris)
 
-def example_plot(ax):
-    ax.plot([1, 2])
-    ax.set_xlabel("x-label", fontsize=next(fontsizes))
-    ax.set_ylabel("y-label", fontsize=next(fontsizes))
-    ax.set_title("Better Plot", fontsize=next(fontsizes))
+
+# Matplotlib + pandas
+
+st.header("How many iris flowers of each species are in our dataset?")
+
+counts = iris["species"].value_counts()
+
+count_ax = counts.plot.bar(
+    color=["blue", "red", "green"]
+)
+st.write(count_ax.figure)
 
 
-fig, ax = plt.subplots(figsize=(8, 5))
-example_plot(ax)
-fig.tight_layout()
+# seaborn
 
-st.write(fig)
+st.header("Can petal widthbe used to distingushed the species?")
+
+petal_dist = sns.displot(
+    iris, x="petal_width",
+    hue="species", kind="kde"
+)
+st.write(petal_dist.fig)
+
+# Plotly
+
+st.header("Is the sepal length useful for classifying species?")
+
+scat = px.scatter(
+    iris,
+    x="sepal_length",
+    y="sepal_width",
+    marginal_x="box",
+    marginal_y="violin",
+    color="species"
+)
+st.write(scat)
 
 
 # interaction
