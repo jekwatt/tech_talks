@@ -11,6 +11,7 @@ import plotly.express as px
 
 
 media_dir = Path("media")
+data_dir = Path("data")
 
 
 # text
@@ -73,7 +74,12 @@ st.write(fig)
 
 # better plot
 fontsizes = itertools.cycle([16, 16, 24, 32])
+# data
+st.title("Iris Data")
 
+iris_path = data_dir / "iris.csv"
+iris = pd.read_csv(iris_path)
+st.write(iris)
 
 def example_plot(ax):
     ax.plot([1, 2])
