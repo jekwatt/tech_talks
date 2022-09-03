@@ -118,6 +118,13 @@ st.write(scat)
 # interaction
 
 # radio
+
+iris = st.radio(
+    "Select an Iris",
+    options=["setosa", "versicolor", "virginica"])
+st.header(f"Here is a {iris}!")
+image_path = os.path.join("media", f"{iris}.jpeg")
+st.image(image_path)
 # multiselect
 st.header("`st.multiselect`")
 options = st.multiselect(
@@ -126,14 +133,6 @@ options = st.multiselect(
 )
 st.subheader(f"Multiselect:  **{options}**")
 st.write("---")
-
-# iris flower data set
-iris = st.radio(
-    "Select an Iris",
-    options=["setosa", "versicolor", "virginica"])
-st.header(f"Here is a {iris}!")
-image_path = os.path.join("images", f"{iris}.jpeg")
-st.image(image_path)
 
 
 # slider
