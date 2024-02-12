@@ -1,0 +1,11 @@
+name: jupyter_a
+channels:
+  - conda-forge
+dependencies:
+  - ipykernel
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - pip
+  - pip:
+      - catplotlib
