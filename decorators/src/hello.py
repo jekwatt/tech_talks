@@ -8,7 +8,7 @@ def my_decorator(func):
     return wrapper
 
 
-# Defining the original functions
+# Defining the original function
 
 def hello():
     print("Inside original hello function")
