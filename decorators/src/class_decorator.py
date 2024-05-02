@@ -1,6 +1,3 @@
-from utils import MyDecorator
-
-
 # class as a decorator
 
 class MyDecorator:
