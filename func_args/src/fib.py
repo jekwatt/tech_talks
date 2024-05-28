@@ -1,6 +1,9 @@
 # classic fibonacci examples
 
 
+fib_b_memo_default = {}
+
+
 def fib_a(n):
     if n <= 1:
         return n
@@ -14,7 +17,7 @@ print(f"fib_a {result_a}")
 # splat(*) followed by keyword-only args
 
 
-def fib_b(n, *, memo={}):  # provide an empty memoization cache
+def fib_b(n, *, memo=fib_b_memo_default):  # provide an empty memoization cache
     if n <= 1:
         return n
     elif n not in memo:
@@ -22,9 +25,9 @@ def fib_b(n, *, memo={}):  # provide an empty memoization cache
     return memo[n]
 
 
-result_b1 = fib_b(10, memo={})  # Providing the memo argument explicitly
+result_b1 = fib_b(10)
 print(f"Result {result_b1}")
 
 # Starting a new Fibonacci sequence with an empty memoization cache
-result_b2 = fib_b(10, memo={})
+result_b2 = fib_b(10)
 print(result_b2)
