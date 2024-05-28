@@ -29,6 +29,12 @@ def add_c(arg1, arg2=10):
     return arg1 + arg2
 
 
+# Create a dictionary with keys corresponding to the function's parameters
+mydict=dict(arg1=1, arg2=4)
+# Call the add_c function using the dictionary and unpacking its items as arguments
+print(add_c(**mydict))
+
+
 # Explicitly provide 11 as the value, which overrides the default value of 10
 print(add_c(5, 11))
 
